@@ -1,2 +1,18 @@
 [nix]
 channel = "stable-25_05"
+
+[workflows]
+runButton = "Start Development"
+
+[[workflows.workflow]]
+name = "Start Development"
+author = 47108324
+mode = "parallel"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd Backend/Fintcs.API && dotnet run"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd Frontend && npm start"
